@@ -1,0 +1,37 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+client_id = "7259d819ee683604124006cd896b652a"
+application_url = "https://seeds-mechanics-electro-orbit.trycloudflare.com"
+embedded = true
+name = "easy-menu-clone"
+handle = "easy-menu-clone"
+
+[webhooks]
+api_version = "2025-04"
+
+  [[webhooks.subscriptions]]
+  topics = [ "app/uninstalled" ]
+  uri = "/webhooks/app/uninstalled"
+
+  [[webhooks.subscriptions]]
+  topics = [ "app/scopes_update" ]
+  uri = "/webhooks/app/scopes_update"
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = "write_products, read_products, write_product_listings, read_product_listings, write_content, read_online_store_pages, write_online_store_pages, read_online_store_navigation, write_online_store_navigation"
+
+[auth]
+redirect_urls = [
+  "https://seeds-mechanics-electro-orbit.trycloudflare.com/auth/callback",
+  "https://seeds-mechanics-electro-orbit.trycloudflare.com/auth/shopify/callback",
+  "https://seeds-mechanics-electro-orbit.trycloudflare.com/api/auth/callback"
+]
+
+[pos]
+embedded = false
+
+[build]
+dev_store_url = "devwebsensepro.myshopify.com"
+automatically_update_urls_on_dev = true
+include_config_on_deploy = true
